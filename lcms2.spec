@@ -43,10 +43,13 @@ Development files for LittleCMS2.
 %configure \
 	--disable-static \
 	--program-suffix=2
+sed -i -e 's,define CMSEXPORT,define CMSEXPORT __attribute__((visibility("default"))),g' include/lcms2.h
 %make
 
 %install
 %makeinstall_std
+# No need to re-export from an external application...
+sed -i -e 's,define CMSEXPORT __attribute__((visibility("default"))),define CMSEXPORT,g' include/lcms2.h
 
 install -D -m 644 include/lcms2.h %{buildroot}%{_includedir}/lcms2.h
 install -D -m 644 include/lcms2_plugin.h %{buildroot}%{_includedir}/lcms2_plugin.h
