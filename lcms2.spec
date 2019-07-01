@@ -36,18 +36,18 @@ Provides:	%{name}-devel = %{version}-%{release}
 Development files for LittleCMS2.
 
 %prep
-%setup -q
-%apply_patches
+%autosetup -p1
 
 %build
 %configure \
 	--disable-static \
 	--program-suffix=2
 sed -i -e 's,define CMSEXPORT,define CMSEXPORT __attribute__((visibility("default"))),g' include/lcms2.h
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
+
 # No need to re-export from an external application...
 sed -i -e 's,define CMSEXPORT __attribute__((visibility("default"))),define CMSEXPORT,g' include/lcms2.h
 
