@@ -11,12 +11,12 @@
 
 Summary:	Color Management Engine
 Name:		lcms2
-Version:	2.10
-Release:	2
+Version:	2.11
+Release:	1
 License:	MIT
 Group:		Graphics
 Url:		http://www.littlecms.com/
-Source0:	https://sourceforge.net/projects/lcms/files/lcms/2.9/%{name}-%{version}.tar.gz
+Source0:	https://sourceforge.net/projects/lcms/files/lcms/%{version}/%{name}-%{version}.tar.gz
 BuildRequires:	jbig-devel
 BuildRequires:	tiff-devel
 BuildRequires:	pkgconfig(zlib)
@@ -108,7 +108,6 @@ install -D -m 644 include/lcms2_plugin.h %{buildroot}%{_includedir}/lcms2_plugin
 %{_libdir}/liblcms2.so.%{major}*
 
 %files -n %{devname}
-%doc doc/*.pdf
 %{_includedir}/*
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/%{name}.pc
