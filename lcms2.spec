@@ -1,3 +1,5 @@
+%global optflags %{optflags} -O2
+
 # lcms2 is used by wine
 %ifarch %{x86_64}
 %bcond_without compat32
@@ -12,7 +14,7 @@
 Summary:	Color Management Engine
 Name:		lcms2
 Version:	2.12
-Release:	1
+Release:	2
 License:	MIT
 Group:		Graphics
 Url:		http://www.littlecms.com/
@@ -102,7 +104,7 @@ install -D -m 644 include/lcms2_plugin.h %{buildroot}%{_includedir}/lcms2_plugin
 %files
 %doc AUTHORS COPYING
 %{_bindir}/*
-%{_mandir}/man1/*
+%doc %{_mandir}/man1/*
 
 %files -n %{libname}
 %{_libdir}/liblcms2.so.%{major}*
