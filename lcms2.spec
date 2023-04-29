@@ -6,15 +6,17 @@
 %endif
 
 %define major 2
-%define libname %mklibname %{name}_ %{major}
+%define oldlibname %mklibname %{name}_ 2
+%define libname %mklibname %{name}
 %define devname %mklibname -d %{name}
-%define lib32name %mklib32name %{name}_ %{major}
+%define oldlib32name %mklib32name %{name}_ 2
+%define lib32name %mklib32name %{name}_
 %define dev32name %mklib32name -d %{name}
 
 Summary:	Color Management Engine
 Name:		lcms2
-Version:	2.13.1
-Release:	2
+Version:	2.15
+Release:	1
 License:	MIT
 Group:		Graphics
 Url:		http://www.littlecms.com/
@@ -35,6 +37,7 @@ parallel installed with the original (deprecated) lcms.
 %package -n %{libname}
 Summary:	Libraries for LittleCMS
 Group:		System/Libraries
+%rename %{oldlibname}
 
 %description -n %{libname}
 This package provides the shared lcms2 library.
@@ -52,6 +55,7 @@ Development files for LittleCMS2.
 %package -n %{lib32name}
 Summary:	Libraries for LittleCMS (32-bit)
 Group:		System/Libraries
+%rename %{oldlib32name}
 
 %description -n %{lib32name}
 This package provides the shared lcms2 library.
