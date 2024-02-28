@@ -15,7 +15,7 @@
 
 Summary:	Color Management Engine
 Name:		lcms2
-Version:	2.15
+Version:	2.16
 Release:	1
 License:	MIT
 Group:		Graphics
@@ -106,7 +106,7 @@ install -D -m 644 include/lcms2.h %{buildroot}%{_includedir}/lcms2.h
 install -D -m 644 include/lcms2_plugin.h %{buildroot}%{_includedir}/lcms2_plugin.h
 
 %files
-%doc AUTHORS COPYING
+%doc AUTHORS
 %{_bindir}/*
 %doc %{_mandir}/man1/*
 
