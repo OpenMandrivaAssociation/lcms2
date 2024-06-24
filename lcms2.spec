@@ -10,7 +10,8 @@
 %define libname %mklibname %{name}
 %define devname %mklibname -d %{name}
 %define oldlib32name %mklib32name %{name}_ 2
-%define lib32name %mklib32name %{name}_
+%define brokenlib32name %mklib32name %{name}_
+%define lib32name %mklib32name %{name}
 %define dev32name %mklib32name -d %{name}
 
 Summary:	Color Management Engine
@@ -37,6 +38,7 @@ parallel installed with the original (deprecated) lcms.
 %package -n %{libname}
 Summary:	Libraries for LittleCMS
 Group:		System/Libraries
+# Fixed in 5.0
 %rename %{oldlibname}
 
 %description -n %{libname}
@@ -55,7 +57,10 @@ Development files for LittleCMS2.
 %package -n %{lib32name}
 Summary:	Libraries for LittleCMS (32-bit)
 Group:		System/Libraries
+# Fixed in 5.0
 %rename %{oldlib32name}
+# Fixed after 5.0
+%rename %{brokenlib32name}
 
 %description -n %{lib32name}
 This package provides the shared lcms2 library.
