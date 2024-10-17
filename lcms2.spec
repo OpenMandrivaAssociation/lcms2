@@ -20,7 +20,7 @@ Version:	2.16
 Release:	1
 License:	MIT
 Group:		Graphics
-Url:		http://www.littlecms.com/
+Url:		https://www.littlecms.com/
 Source0:	https://sourceforge.net/projects/lcms/files/lcms/%{version}/%{name}-%{version}.tar.gz
 BuildRequires:	jbig-devel
 BuildRequires:	tiff-devel
