@@ -22,6 +22,11 @@ License:	MIT
 Group:		Graphics
 Url:		https://www.littlecms.com/
 Source0:	https://sourceforge.net/projects/lcms/files/lcms/%{version}/%{name}-%{version}.tar.gz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	jbig-devel
 BuildRequires:	tiff-devel
 BuildRequires:	pkgconfig(zlib)
