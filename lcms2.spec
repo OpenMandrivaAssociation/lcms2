@@ -16,7 +16,7 @@
 
 Summary:	Color Management Engine
 Name:		lcms2
-Version:	2.17
+Version:	2.18
 Release:	1
 License:	MIT
 Group:		Graphics
