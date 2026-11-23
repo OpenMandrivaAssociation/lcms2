@@ -16,7 +16,7 @@
 
 Summary:	Color Management Engine
 Name:		lcms2
-Version:	2.19.1
+Version:	2.20
 Release:	1
 License:	MIT
 Group:		Graphics
@@ -33,6 +33,9 @@ BuildRequires:	pkgconfig(zlib)
 %if %{with compat32}
 BuildRequires:	devel(libtiff)
 BuildRequires:	devel(libz)
+BuildRequires:	cross-i686-openmandriva-linux-gnu-clang
+BuildRequires:	cross-i686-openmandriva-linux-gnu-libc
+BuildRequires:	cross-i686-openmandriva-linux-gnu-gcc
 %endif
 
 %description
